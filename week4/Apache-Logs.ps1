@@ -10,8 +10,11 @@
     # Regular expression to match IP address
     $ipRegex = '\b(?:\d{1,3}\.){3}\d{1,3}\b'
 
+    # Path variable
+    $Path = 'C:\xampp\apache\logs\'
+
     # Iterate through log files and extract IPs based on the provided criteria
-    Get-ChildItem -Filter *.log | ForEach-Object {
+    Get-ChildItem $Path -Filter *.log | ForEach-Object {
         Select-String -Path $_.FullName -Pattern $HttpCode | ForEach-Object {
             # Check if the line contains the page and browser, and then extract the IP
             if ($_.Line -match $PageVisited -and $_.Line -match $Browser -and $_.Line -match $ipRegex) {
