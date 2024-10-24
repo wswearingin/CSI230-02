@@ -1,8 +1,8 @@
 ﻿# Challenge 1
-# getIocs | Format-Table
+getIocs | Format-Table
 
 # Challenge 2
-# getLogs "$PSScriptRoot\access.log" | Format-Table
+getLogs "$PSScriptRoot\access.log" | Format-Table
 
 # Challenge 3
 getSuspicious -Path "$PSScriptRoot\access.log" | Format-Table
